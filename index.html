@@ -2,22 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- site root from the address, before any relative URL: the host serves this file for /task/7 too, and ./assets
+         must load from the root; the list = the routes of lib/router.ts (test/pages.test.ts). Page folders drop this
+         script and point to ../ instead (scripts/pages.mjs folderHtml). -->
+    <script>
+      (function () {
+        var p = location.pathname.replace(/index\.html$/, "");
+        var m = p.match(/(^|\/)(validate|leaderboard|yolo|stake|token|tokenomics|stabilizer|burn|how|how-it-works|reels|new|me|money|trophies|proofs|top|buy|task\/\d+|case\/\d+|u\/0x[0-9a-fA-F]{40})\/?$/);
+        var b = m ? p.slice(0, m.index + m[1].length) : p.replace(/[^\/]*$/, "");
+        document.write('<base href="' + b.replace(/["<>&']/g, "") + '" />');
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="description" content="Everyone has a price. Name yours. Post a task with a reward, do it, prove it, identity.md NFT holders judge, the contract pays." />
+    <meta name="description" content="Post a dare with a reward. Anyone can do it and submit proof. identity.md NFT holders judge disputes, the contract pays." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="moneycanbuy.fun" />
     <meta property="og:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
-    <meta property="og:description" content="Post a task with a reward. Do it, prove it. identity.md NFT holders judge, the contract pays." />
-    <meta property="og:image" content="./brand/og-1200x630.png" />
+    <meta property="og:description" content="Post a dare with a reward. Anyone can do it and submit proof. identity.md NFT holders judge disputes, the contract pays." />
+    <meta property="og:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="moneycanbuy.fun: a smug toad in a black tank top with a gold chain and a gold $ price tag" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
-    <meta name="twitter:description" content="Post a task with a reward. Do it, prove it. identity.md NFT holders judge, the contract pays." />
-    <meta name="twitter:image" content="./brand/og-1200x630.png" />
+    <meta name="twitter:description" content="Post a dare with a reward. Anyone can do it and submit proof. identity.md NFT holders judge disputes, the contract pays." />
+    <meta name="twitter:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./brand/favicon-16.png" />
     <link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
@@ -35,10 +46,16 @@
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-    <script type="module" crossorigin src="./assets/index-B69fLICN.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DRz_Q1QG.css">
+    <script type="module" crossorigin src="./assets/index-Bu-V0wQC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DfHOpKJx.css">
+      <link rel="canonical" href="https://moneycanbuy.fun/" />
+    <meta property="og:url" content="https://moneycanbuy.fun/" />
+    <meta name="twitter:site" content="@moneycanbuy_fun" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"moneycanbuy.fun","url":"https://moneycanbuy.fun/","logo":"https://moneycanbuy.fun/brand/apple-touch-icon.png","sameAs":["https://x.com/moneycanbuy_fun","https://t.me/moneycanbuyfun"]},{"@context":"https://schema.org","@type":"WebSite","name":"moneycanbuy.fun","url":"https://moneycanbuy.fun/"}]</script>
+    <style>.seo-static{max-width:40rem;margin:4rem auto;padding:0 1rem;font:16px/1.5 Quicksand,system-ui,sans-serif;opacity:0;animation:seo-in .2s 2s forwards}.seo-static h1{font-size:1.6rem;margin:0 0 .5rem}@keyframes seo-in{to{opacity:1}}</style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><main class="seo-static"><h1>Everyone has a price. Name yours.</h1><p>Post a dare with a reward in ETH, USDC, IMD or $YOLO. Anyone can do it and submit proof. Anyone can dispute a proof within 24 hours; identity.md NFT holders vote, the IMD swarm decides appeals, and the contract pays the doer.</p></main></div>
   </body>
 </html>
