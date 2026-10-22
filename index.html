@@ -31,12 +31,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./brand/favicon-16.png" />
     <link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
-    <!-- theme before the first paint (src/lib/theme.ts): Auto = the device, a saved Light/Dark wins; no flash -->
+    <!-- theme before the first paint (src/lib/theme.ts): a saved Dark/Light/Auto wins, nothing saved = Dark; Auto = the device; no flash -->
     <script>
       (function () {
         var p = null;
         try { p = localStorage.getItem("mcb.theme"); } catch (e) {}
-        var t = p === "light" || p === "dark" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (p !== "light" && p !== "dark" && p !== "auto") p = "dark";
+        var t = p !== "auto" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         var r = document.documentElement;
         r.dataset.theme = t;
         r.style.colorScheme = t;
@@ -45,8 +46,8 @@
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-    <script type="module" crossorigin src="./assets/index-HC3yZAFG.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-2osuhigG.css">
+    <script type="module" crossorigin src="./assets/index-BfqiPNQp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BCUgGUQF.css">
       <link rel="canonical" href="https://moneycanbuy.fun/" />
     <meta property="og:url" content="https://moneycanbuy.fun/" />
     <meta name="twitter:site" content="@moneycanbuy_fun" />
