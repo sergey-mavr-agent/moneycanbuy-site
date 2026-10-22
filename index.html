@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="Everyone has a price. Name yours. Post a task with a reward, do it, prove it, identity.md NFT holders judge, the contract pays." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="moneycanbuy.fun" />
+    <meta property="og:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
+    <meta property="og:description" content="Post a task with a reward. Do it, prove it. identity.md NFT holders judge, the contract pays." />
+    <meta property="og:image" content="./brand/og-1200x630.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="moneycanbuy.fun: a smug toad in a black tank top with a gold chain and a gold $ price tag" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
+    <meta name="twitter:description" content="Post a task with a reward. Do it, prove it. identity.md NFT holders judge, the contract pays." />
+    <meta name="twitter:image" content="./brand/og-1200x630.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./brand/favicon-16.png" />
+    <link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
+    <!-- theme before the first paint (src/lib/theme.ts): Auto = the device, a saved Light/Dark wins; no flash -->
+    <script>
+      (function () {
+        var p = null;
+        try { p = localStorage.getItem("mcb.theme"); } catch (e) {}
+        var t = p === "light" || p === "dark" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        var r = document.documentElement;
+        r.dataset.theme = t;
+        r.style.colorScheme = t;
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute("content", t === "light" ? "#f6f7f4" : "#000000");
+      })();
+    </script>
+    <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
+    <script type="module" crossorigin src="./assets/index-B69fLICN.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DRz_Q1QG.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

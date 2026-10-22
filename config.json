@@ -1,0 +1,102 @@
+{
+  "network": "mainnet",
+  "networks": {
+    "mainnet": {
+      "name": "Ethereum",
+      "chainId": 1,
+      "rpcUrl": "https://ethereum-rpc.publicnode.com",
+      "rpcUrls": [
+        "https://ethereum-rpc.publicnode.com",
+        "https://gateway.tenderly.co/public/mainnet",
+        "https://eth.drpc.org",
+        "https://rpc.mevblocker.io"
+      ],
+      "apiUrl": "",
+      "ipfsGateway": "https://gateway.pinata.cloud/ipfs/",
+      "fromBlock": 26241860,
+      "logWindow": 5000,
+      "hiddenListFromBlock": 26244092,
+      "nftFromBlock": 25090085,
+      "explorer": "https://etherscan.io",
+      "wallets": {
+        "incentives": "0x7085193516EDc587fAebFF7a48548eAC8db5fAb5",
+        "treasury": "0x3c587Eff6c96eAcF7E3dcC2CFf6416161386E48C",
+        "mm": "0xaaB0269b956bd5F97B44529569b042e7BD72B508",
+        "dev": "0x8Ad18E99F4C8d8406f9Ba8899CF308000518A981",
+        "team": "0x153D12cc398d79A99B781B23DB6399556b84ca76"
+      },
+      "contracts": {
+        "vault": "0x88c3B0B64e6869C424DAF25ad8eD635180832493",
+        "caseDesk": "0xE4d4e62060043eac2930f0807A7D22153e245b57",
+        "disputeDesk": "0x832bb6bab313CD9B4d98e73D1ACb2CA5b8DB5847",
+        "registry": "0x25576E455A87B92836EA901E89e6b26e59306BE9",
+        "imd": "0xD34a99Bc0f67aE1bbd63C660e6d0b0dd03E263B7",
+        "usdc": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "yolo": "0x49E55A87AA4bB0d2fd58fDCf1A31c9612DE015dc",
+        "sweetener": "0xA716c82c8B2E3D47f78B16BF823aDcD63dE0A957",
+        "trophy": "0x0F925414F91360aF855c83bA617ee53eDc112bCF",
+        "directory": "0x0fA6f265B375ED6E13517e0a5bE9aC5E8C0EfF2b",
+        "hiddenList": "0xf88c5e714802563CE4A380F95Fef5b5204972Fe6",
+        "weth": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "nft": "0x0000eC93127BAA929E58E97dd0095A2BFb38ec1D",
+        "devPrices": "0xE1A0F725cF27895B3cd6c050f73B56086F904A26",
+        "burner": "0xbf6838E27F82754443724006D127a130B9dd9E0A",
+        "predict": "0x6732809748c90148CE0f47808BCdA3bD0aFCd7f7",
+        "lockHub": "0xfC8Cb0DC242AcC7fd74E06B3C0b598bE63AFfb5F",
+        "intake": "0xa43e6F75ee006411F79Ac1C84120606C2330DE82",
+        "delegateRegistry": "0x00000000000000447e69651d841bD8D104Bed493",
+        "quoter": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+        "nftGate": "0x97C8Fe82527F1a65A147bB0b425C717E4EC547C2",
+        "universalRouter": "0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af",
+        "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+        "v4Quoter": "0x52F0E24D1c21C8A0cB1e5a5dD6198556BD9E1203"
+      },
+      "yoloPool": {
+        "fee": 12500,
+        "tickSpacing": 60,
+        "hooks": "0x784FF9a3ac5d88A30bfff6F7f2a270161FBE6000"
+      },
+      "buyRoutes": {
+        "quoter": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+        "routes": [
+          {
+            "symbol": "ETH",
+            "token": "ETH",
+            "decimals": 18,
+            "path": [
+              "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              500,
+              "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+              3000,
+              "0xD34a99Bc0f67aE1bbd63C660e6d0b0dd03E263B7"
+            ]
+          },
+          {
+            "symbol": "USDC",
+            "token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "decimals": 6,
+            "path": [
+              "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+              3000,
+              "0xD34a99Bc0f67aE1bbd63C660e6d0b0dd03E263B7"
+            ]
+          },
+          {
+            "symbol": "USDT",
+            "token": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "decimals": 6,
+            "path": [
+              "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+              100,
+              "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+              3000,
+              "0xD34a99Bc0f67aE1bbd63C660e6d0b0dd03E263B7"
+            ]
+          }
+        ]
+      },
+      "attester": "0x5598Aa9146215Bc13eb26f2c692Ad1461Fd32982",
+      "demoAccounts": []
+    }
+  }
+}
