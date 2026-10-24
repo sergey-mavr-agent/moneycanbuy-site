@@ -43,11 +43,15 @@
         r.style.colorScheme = t;
         var m = document.querySelector('meta[name="theme-color"]');
         if (m) m.setAttribute("content", t === "light" ? "#f6f7f4" : "#000000");
+        // the skin (src/lib/skin.ts): Degen / YOLO / macOS, nothing saved = Degen
+        var s = null;
+        try { s = localStorage.getItem("mcb.skin"); } catch (e) {}
+        r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" ? s : "degen";
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-    <script type="module" crossorigin src="./assets/index-BjYzIMXj.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BaPcLSoN.css">
+    <script type="module" crossorigin src="./assets/index-BtuqbKNq.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-o8ux9npW.css">
       <link rel="canonical" href="https://moneycanbuy.fun/" />
     <meta property="og:url" content="https://moneycanbuy.fun/" />
     <meta name="twitter:site" content="@moneycanbuy_fun" />
