@@ -7,7 +7,7 @@
     <script>
       (function () {
         var p = location.pathname.replace(/index\.html$/, "");
-        var m = p.match(/(^|\/)(validate|leaderboard|yolo|stake|token|tokenomics|stabilizer|burn|how|how-it-works|reels|new|me|money|trophies|proofs|top|buy|task\/\d+|case\/\d+|u\/0x[0-9a-fA-F]{40})\/?$/);
+        var m = p.match(/(^|\/)(validate|more|leaderboard|yolo|stake|token|tokenomics|stabilizer|burn|how|how-it-works|reels|new|me|money|trophies|proofs|top|buy|task\/\d+|case\/\d+|u\/0x[0-9a-fA-F]{40})\/?$/);
         var b = m ? p.slice(0, m.index + m[1].length) : p.replace(/[^\/]*$/, "");
         document.write('<base href="' + b.replace(/["<>&']/g, "") + '" />');
       })();
@@ -39,6 +39,20 @@
         if (p !== "light" && p !== "dark" && p !== "auto") p = "dark";
         var t = p !== "auto" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         var r = document.documentElement;
+        // inside Telegram (src/lib/tma.ts): its colour scheme wins from the first frame, read from the launch parameters
+        // (#tgWebAppThemeParams=…, or the copy Telegram's SDK keeps for a reload) with the SDK's own dark test
+        var tg = null;
+        try {
+          var lp = new URLSearchParams(location.hash.slice(1)).get("tgWebAppThemeParams") || new URLSearchParams(location.search.slice(1)).get("tgWebAppThemeParams");
+          if (!lp) { var sv = JSON.parse(sessionStorage.getItem("__telegram__initParams") || "null"); lp = sv && sv.tgWebAppThemeParams; }
+          if (lp) tg = JSON.parse(lp);
+        } catch (e) {}
+        var bg = tg && /^#[0-9a-f]{6}$/i.test(tg.bg_color || "") ? parseInt(tg.bg_color.slice(1), 16) : -1;
+        if (bg >= 0) {
+          var R = bg >> 16, G = (bg >> 8) & 255, B = bg & 255;
+          t = Math.sqrt(0.299 * R * R + 0.587 * G * G + 0.114 * B * B) < 120 ? "dark" : "light";
+          r.classList.add("tma");
+        }
         r.dataset.theme = t;
         r.style.colorScheme = t;
         var m = document.querySelector('meta[name="theme-color"]');
@@ -50,8 +64,8 @@
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-    <script type="module" crossorigin src="./assets/index-BtuqbKNq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-o8ux9npW.css">
+    <script type="module" crossorigin src="./assets/index-BAbgmWtG.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BeoLujrk.css">
       <link rel="canonical" href="https://moneycanbuy.fun/" />
     <meta property="og:url" content="https://moneycanbuy.fun/" />
     <meta name="twitter:site" content="@moneycanbuy_fun" />
