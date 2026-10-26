@@ -1,5 +1,6 @@
 {
   "network": "mainnet",
+  "privyAppId": "cmvl2wc94000c0hjsroc4d4kv",
   "networks": {
     "mainnet": {
       "name": "Ethereum",
@@ -8,14 +9,14 @@
       "rpcUrls": [
         "https://ethereum-rpc.publicnode.com",
         "https://gateway.tenderly.co/public/mainnet",
-        "https://eth.drpc.org",
-        "https://rpc.mevblocker.io"
+        "https://eth.drpc.org"
       ],
       "apiUrl": "",
       "ipfsGateway": "https://gateway.pinata.cloud/ipfs/",
       "fromBlock": 26241860,
       "logWindow": 5000,
       "hiddenListFromBlock": 26244092,
+      "commentsFromBlock": 26272730,
       "nftFromBlock": 25090085,
       "explorer": "https://etherscan.io",
       "wallets": {
@@ -37,6 +38,7 @@
         "trophy": "0x0F925414F91360aF855c83bA617ee53eDc112bCF",
         "directory": "0x0fA6f265B375ED6E13517e0a5bE9aC5E8C0EfF2b",
         "hiddenList": "0xf88c5e714802563CE4A380F95Fef5b5204972Fe6",
+        "comments": "0x0B495E1E2c40ef2ae8F45b7857f1D98Fd4469915",
         "weth": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
         "nft": "0x0000eC93127BAA929E58E97dd0095A2BFb38ec1D",
         "devPrices": "0xE1A0F725cF27895B3cd6c050f73B56086F904A26",
