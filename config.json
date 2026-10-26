@@ -1,6 +1,8 @@
 {
   "network": "mainnet",
   "privyAppId": "cmvl2wc94000c0hjsroc4d4kv",
+  "tmaBot": "moneycanbuy_fun_bot",
+  "tmaApp": "app",
   "networks": {
     "mainnet": {
       "name": "Ethereum",
