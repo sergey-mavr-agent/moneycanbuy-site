@@ -1,0 +1,1 @@
+import{jsxRuntimeExports as o}from"./usePrivyUi-B8zhJp7s.js";import{ForwardRef as r}from"./WalletIcon-yYoMwAMn.js";const h=({icon:t,name:e})=>typeof t=="string"?o.jsx("img",{alt:`${e||"wallet"} logo`,src:t,style:{height:24,width:24,borderRadius:4}}):t===void 0?o.jsx(r,{style:{height:24,width:24}}):t?o.jsx(t,{style:{height:24,width:24}}):null;export{h as i};

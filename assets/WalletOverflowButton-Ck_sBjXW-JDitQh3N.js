@@ -1,0 +1,1 @@
+import{jsxRuntimeExports as o}from"./usePrivyUi-B8zhJp7s.js";import{I$1 as i,W as s,$ as m}from"./PrivyRoot-CBKNd_qX.js";import{Wallet as x}from"./wallet-DNq8ZHuy.js";const c=({onClick:r,text:t})=>o.jsxs(i,{onClick:r,children:[o.jsx(s,{children:o.jsx(x,{})}),o.jsx(m,{children:t})]});export{c as m};
