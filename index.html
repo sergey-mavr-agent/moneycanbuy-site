@@ -57,10 +57,10 @@
         r.style.colorScheme = t;
         var m = document.querySelector('meta[name="theme-color"]');
         if (m) m.setAttribute("content", t === "light" ? "#f6f7f4" : "#000000");
-        // the skin (src/lib/skin.ts): Degen / YOLO / macOS, nothing saved = Degen
+        // the skin (src/lib/skin.ts): Degen / YOLO / macOS / IMD, nothing saved = Degen
         var s = null;
         try { s = localStorage.getItem("mcb.skin"); } catch (e) {}
-        r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" ? s : "degen";
+        r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" || s === "imd" ? s : "degen";
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
