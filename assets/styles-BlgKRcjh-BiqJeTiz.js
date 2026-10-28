@@ -1,4 +1,4 @@
-import{gt as r,a$5 as o}from"./PrivyRoot-CBKNd_qX.js";import{n as i}from"./ScreenLayout-Cgw3TtUo-EoJvtbS2.js";const a=r(i)`
+import{gt as r,a$4 as o}from"./PrivyRoot-CBKNd_qX.js";import{n as i}from"./ScreenLayout-Cgw3TtUo-EoJvtbS2.js";const a=r(i)`
   #privy-content-footer-container {
     margin-top: 0;
   }

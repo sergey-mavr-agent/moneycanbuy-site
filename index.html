@@ -12,6 +12,25 @@
         document.write('<base href="' + b.replace(/["<>&']/g, "") + '" />');
       })();
     </script>
+    <script>
+      // the entry tags after <base> (scripts/pages.mjs assetsAfterBase)
+      (function (t) {
+        var h = document.head;
+        function add(k, u) {
+          var e = document.createElement(k === "s" ? "script" : "link");
+          e.crossOrigin = "anonymous";
+          if (k === "s") { e.type = "module"; e.src = u; } else { e.rel = k === "p" ? "modulepreload" : "stylesheet"; e.href = u; }
+          h.appendChild(e);
+          return e;
+        }
+        window.mcbRoot = function () {
+          if (window.mcbRooted) return;
+          window.mcbRooted = 1;
+          t.forEach(function (x) { if (x[0] !== "p") add(x[0], "/" + x[1].slice(2)); });
+        };
+        t.forEach(function (x) { var e = add(x[0], x[1]); if (x[0] === "s") e.onerror = window.mcbRoot; });
+      })([["s","./assets/index-Bsp81E0Y.js"],["p","./assets/utils-BC2Fii6b.js"],["p","./assets/call-CzGHd1Tp.js"],["p","./assets/secp256k1-BbqJKDBx.js"],["p","./assets/_commonjsHelpers-D6-XlEtG.js"],["p","./assets/index-FIB-sc4Q.js"],["p","./assets/localBatchGatewayRequest-BE0Diz0P.js"],["p","./assets/rpc-CR-hAd5P.js"],["p","./assets/usePrivyUi-B8zhJp7s.js"],["p","./assets/createWalletClient-BP9gTipG.js"],["p","./assets/walletPick-Ddo8nB3D.js"],["p","./assets/useDisconnect-leMOjfS4.js"],["c","./assets/index-ai_zuIHV.css"]]);
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark light" />
@@ -64,19 +83,6 @@
       })();
     </script>
     <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-    <script type="module" crossorigin src="./assets/index-Bsp81E0Y.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/utils-BC2Fii6b.js">
-    <link rel="modulepreload" crossorigin href="./assets/call-CzGHd1Tp.js">
-    <link rel="modulepreload" crossorigin href="./assets/secp256k1-BbqJKDBx.js">
-    <link rel="modulepreload" crossorigin href="./assets/_commonjsHelpers-D6-XlEtG.js">
-    <link rel="modulepreload" crossorigin href="./assets/index-FIB-sc4Q.js">
-    <link rel="modulepreload" crossorigin href="./assets/localBatchGatewayRequest-BE0Diz0P.js">
-    <link rel="modulepreload" crossorigin href="./assets/rpc-CR-hAd5P.js">
-    <link rel="modulepreload" crossorigin href="./assets/usePrivyUi-B8zhJp7s.js">
-    <link rel="modulepreload" crossorigin href="./assets/createWalletClient-BP9gTipG.js">
-    <link rel="modulepreload" crossorigin href="./assets/walletPick-Ddo8nB3D.js">
-    <link rel="modulepreload" crossorigin href="./assets/useDisconnect-leMOjfS4.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-ai_zuIHV.css">
       <link rel="canonical" href="https://moneycanbuy.fun/" />
     <meta property="og:url" content="https://moneycanbuy.fun/" />
     <meta name="twitter:site" content="@moneycanbuy_fun" />
