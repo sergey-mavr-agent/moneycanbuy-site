@@ -1,17 +1,15 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- site root from the address, before any relative URL: the host serves this file for /me, /me/ and /task/7 too,
-         and ./assets must load from the root; the list = the routes of lib/router.ts (test/pages.test.ts). -->
-    <script>
-      (function () {
-        var p = location.pathname.replace(/index\.html$/, "");
-        var m = p.match(/(^|\/)(validate|more|leaderboard|yolo|stake|token|tokenomics|stabilizer|burn|how|how-it-works|reels|new|me|money|trophies|proofs|top|buy|task\/\d+|case\/\d+|u\/0x[0-9a-fA-F]{40})\/?$/);
-        var b = m ? p.slice(0, m.index + m[1].length) : p.replace(/[^\/]*$/, "");
-        document.write('<base href="' + b.replace(/["<>&']/g, "") + '" />');
-      })();
-    </script>
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+var p = location.pathname.replace(/index\.html$/, "");
+var m = p.match(/(^|\/)(validate|more|leaderboard|yolo|stake|token|tokenomics|stabilizer|burn|how|how-it-works|reels|new|me|money|trophies|proofs|top|buy|task\/\d+|case\/\d+|u\/0x[0-9a-fA-F]{40})\/?$/);
+var b = m ? p.slice(0, m.index + m[1].length) : p.replace(/[^\/]*$/, "");
+document.write('<base href="' + b.replace(/["<>&']/g, "") + '" />');
+})();
+</script>
     <script>
       // the entry tags after <base> (scripts/pages.mjs assetsAfterBase)
       (function (t) {
@@ -31,66 +29,65 @@
         t.forEach(function (x) { var e = add(x[0], x[1]); if (x[0] === "s") e.onerror = window.mcbRoot; });
       })([["s","./assets/index-Bsp81E0Y.js"],["p","./assets/utils-BC2Fii6b.js"],["p","./assets/call-CzGHd1Tp.js"],["p","./assets/secp256k1-BbqJKDBx.js"],["p","./assets/_commonjsHelpers-D6-XlEtG.js"],["p","./assets/index-FIB-sc4Q.js"],["p","./assets/localBatchGatewayRequest-BE0Diz0P.js"],["p","./assets/rpc-CR-hAd5P.js"],["p","./assets/usePrivyUi-B8zhJp7s.js"],["p","./assets/createWalletClient-BP9gTipG.js"],["p","./assets/walletPick-Ddo8nB3D.js"],["p","./assets/useDisconnect-leMOjfS4.js"],["c","./assets/index-ai_zuIHV.css"]]);
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="moneycanbuy.fun" />
-    <meta property="og:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
-    <meta property="og:description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
-    <meta property="og:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="moneycanbuy.fun: a smug toad in a black tank top with a gold chain and a gold $ price tag" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
-    <meta name="twitter:description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
-    <meta name="twitter:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./brand/favicon-16.png" />
-    <link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
-    <!-- theme before the first paint (src/lib/theme.ts): a saved Dark/Light/Auto wins, nothing saved = Dark; Auto = the device; no flash -->
-    <script>
-      (function () {
-        var p = null;
-        try { p = localStorage.getItem("mcb.theme"); } catch (e) {}
-        if (p !== "light" && p !== "dark" && p !== "auto") p = "dark";
-        var t = p !== "auto" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        var r = document.documentElement;
-        // inside Telegram (src/lib/tma.ts): its colour scheme wins from the first frame, read from the launch parameters
-        // (#tgWebAppThemeParams=…, or the copy Telegram's SDK keeps for a reload) with the SDK's own dark test
-        var tg = null;
-        try {
-          var lp = new URLSearchParams(location.hash.slice(1)).get("tgWebAppThemeParams") || new URLSearchParams(location.search.slice(1)).get("tgWebAppThemeParams");
-          if (!lp) { var sv = JSON.parse(sessionStorage.getItem("__telegram__initParams") || "null"); lp = sv && sv.tgWebAppThemeParams; }
-          if (lp) tg = JSON.parse(lp);
-        } catch (e) {}
-        var bg = tg && /^#[0-9a-f]{6}$/i.test(tg.bg_color || "") ? parseInt(tg.bg_color.slice(1), 16) : -1;
-        if (bg >= 0) {
-          var R = bg >> 16, G = (bg >> 8) & 255, B = bg & 255;
-          t = Math.sqrt(0.299 * R * R + 0.587 * G * G + 0.114 * B * B) < 120 ? "dark" : "light";
-          r.classList.add("tma");
-        }
-        r.dataset.theme = t;
-        r.style.colorScheme = t;
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute("content", t === "light" ? "#f6f7f4" : "#000000");
-        // the skin (src/lib/skin.ts): Degen / YOLO / macOS / IMD, nothing saved = Degen
-        var s = null;
-        try { s = localStorage.getItem("mcb.skin"); } catch (e) {}
-        r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" || s === "imd" ? s : "degen";
-      })();
-    </script>
-    <title>moneycanbuy.fun: everyone has a price. Name yours.</title>
-      <link rel="canonical" href="https://moneycanbuy.fun/" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<meta name="color-scheme" content="dark light" />
+<meta name="description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="moneycanbuy.fun" />
+<meta property="og:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
+<meta property="og:description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
+<meta property="og:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="moneycanbuy.fun: a smug toad in a black tank top with a gold chain and a gold $ price tag" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="moneycanbuy.fun: everyone has a price. Name yours." />
+<meta name="twitter:description" content="Post a dare with a reward. Anyone can do it and submit proof. IMD identity NFT holders judge disputes, the contract pays." />
+<meta name="twitter:image" content="https://moneycanbuy.fun/brand/og-1200x630.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
+<script>
+(function () {
+var p = null;
+try { p = localStorage.getItem("mcb.theme"); } catch (e) {}
+if (p !== "light" && p !== "dark" && p !== "auto") p = "dark";
+var t = p !== "auto" ? p : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+var r = document.documentElement;
+var tg = null;
+try {
+var lp = new URLSearchParams(location.hash.slice(1)).get("tgWebAppThemeParams") || new URLSearchParams(location.search.slice(1)).get("tgWebAppThemeParams");
+if (!lp) { var sv = JSON.parse(sessionStorage.getItem("__telegram__initParams") || "null"); lp = sv && sv.tgWebAppThemeParams; }
+if (lp) tg = JSON.parse(lp);
+} catch (e) {}
+var bg = tg && /^#[0-9a-f]{6}$/i.test(tg.bg_color || "") ? parseInt(tg.bg_color.slice(1), 16) : -1;
+if (bg >= 0) {
+var R = bg >> 16, G = (bg >> 8) & 255, B = bg & 255;
+t = Math.sqrt(0.299 * R * R + 0.587 * G * G + 0.114 * B * B) < 120 ? "dark" : "light";
+r.classList.add("tma");
+}
+r.dataset.theme = t;
+r.style.colorScheme = t;
+var m = document.querySelector('meta[name="theme-color"]');
+if (m) m.setAttribute("content", t === "light" ? "#f6f7f4" : "#000000");
+var s = null;
+try { s = localStorage.getItem("mcb.skin"); } catch (e) {}
+r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" || s === "imd" ? s : "degen";
+})();
+</script>
+<title>moneycanbuy.fun: everyone has a price. Name yours.</title>
+    <link rel="canonical" href="https://moneycanbuy.fun/" />
     <meta property="og:url" content="https://moneycanbuy.fun/" />
     <meta name="twitter:site" content="@moneycanbuy_fun" />
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"moneycanbuy.fun","url":"https://moneycanbuy.fun/","logo":"https://moneycanbuy.fun/brand/apple-touch-icon.png","sameAs":["https://x.com/moneycanbuy_fun","https://t.me/moneycanbuyfun"]},{"@context":"https://schema.org","@type":"WebSite","name":"moneycanbuy.fun","url":"https://moneycanbuy.fun/"}]</script>
     <style>.seo-static{max-width:40rem;margin:4rem auto;padding:0 1rem;font:16px/1.5 Quicksand,system-ui,sans-serif;opacity:0;animation:seo-in .2s 2s forwards}.seo-static h1{font-size:1.6rem;margin:0 0 .5rem}@keyframes seo-in{to{opacity:1}}</style>
   </head>
-  <body>
-    <div id="root"><main class="seo-static"><h1>Everyone has a price. Name yours.</h1><p>Post a dare with a reward in ETH, USDC, IMD or $YOLO. Anyone can do it and submit proof. Anyone can dispute a proof within 24 hours; IMD identity NFT holders vote, the IMD swarm decides appeals, and the contract pays the doer.</p></main></div>
-  </body>
+<body>
+<div id="root"><main class="seo-static"><h1>Everyone has a price. Name yours.</h1><p>Post a dare with a reward in ETH, USDC, IMD or $YOLO. Anyone can do it and submit proof. Anyone can dispute a proof within 24 hours; IMD identity NFT holders vote, the IMD swarm decides appeals, and the contract pays the doer.</p></main></div>
+<script>
+(function(){if(!window.MutationObserver||!window.requestAnimationFrame)return;var q=0,d=document;function fit(){q=0;d.querySelectorAll("[role=tablist]").forEach(function(r){var o=r.querySelector(":scope>.on"),k=o&&o.textContent+r.scrollWidth+"|"+r.clientWidth;if(!o||r.__k===k)return;r.__k=k;var a=r.getBoundingClientRect(),b=o.getBoundingClientRect();if(b.left<a.left+1)r.scrollLeft+=b.left-a.left-24;else if(b.right>a.right-1)r.scrollLeft+=b.right-a.right+24})}function soon(){q=q||requestAnimationFrame(fit)}new MutationObserver(soon).observe(d.documentElement,{subtree:!0,childList:!0,characterData:!0,attributes:!0,attributeFilter:["class"]});addEventListener("resize",soon)})();
+</script>
+</body>
 </html>
