@@ -89,5 +89,8 @@ r.dataset.skin = s === "yolo" || s === "minimal" ? "yolo" : s === "mac" || s ===
 <script>
 (function(){if(!window.MutationObserver||!window.requestAnimationFrame)return;var q=0,d=document;function fit(){q=0;d.querySelectorAll("[role=tablist]").forEach(function(r){var o=r.querySelector(":scope>.on"),k=o&&o.textContent+r.scrollWidth+"|"+r.clientWidth;if(!o||r.__k===k)return;r.__k=k;var a=r.getBoundingClientRect(),b=o.getBoundingClientRect();if(b.left<a.left+1)r.scrollLeft+=b.left-a.left-24;else if(b.right>a.right-1)r.scrollLeft+=b.right-a.right+24})}function soon(){q=q||requestAnimationFrame(fit)}new MutationObserver(soon).observe(d.documentElement,{subtree:!0,childList:!0,characterData:!0,attributes:!0,attributeFilter:["class"]});addEventListener("resize",soon)})();
 </script>
+<script>
+(function(){var S=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,"value").set;addEventListener("input",function(e){var t=e.target;if(e.isComposing||!(t instanceof HTMLInputElement)||t.getAttribute("inputmode")!=="decimal")return;var v=t.value,n=v.replace(/,/g,".");if(n===v)return;var a=t.selectionStart;S.call(t,n);t.setSelectionRange(a,a)},!0)})();
+</script>
 </body>
 </html>
