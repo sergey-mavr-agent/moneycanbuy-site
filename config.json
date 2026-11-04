@@ -105,7 +105,7 @@
       "attester": "0x5598Aa9146215Bc13eb26f2c692Ad1461Fd32982",
       "demoAccounts": [],
       "createdBlocks": {
-        "0x88c3b0b64e6869c424daf25ad8ed635180832493": "1:26248947,36,72,75,36,51,1,1,1,1,2,1,1,865,58,5743,3,2,2,2,3,3,2,4,2,20972,46,4,2,2,4,88,16360,47,16,40,4,8,7,2,2,12,11709,57,44,50,297,13,59,11,67,12,16,84,245,11,12,9,11,3,2"
+        "0x88c3b0b64e6869c424daf25ad8ed635180832493": "1:26248947,36,72,75,36,51,1,1,1,1,2,1,1,865,58,5743,3,2,2,2,3,3,2,4,2,20972,46,4,2,2,4,88,16360,47,16,40,4,8,7,2,2,12,11709,57,44,50,297,13,59,11,67,12,16,84,245,11,12,9,11,3,2,36640,10,16,10,10,11"
       },
       "createdTitles": {
         "0x88c3b0b64e6869c424daf25ad8ed635180832493": {
@@ -169,7 +169,13 @@
           "58": "Sing a love song to the YOLO frog for 1 minute",
           "59": "Whole garlic clove and a glass of pickle brine",
           "60": "Mayo with kefir and 30 s with a straight face",
-          "61": "Croak like PEPE for 60 seconds without laughing"
+          "61": "Croak like PEPE for 60 seconds without laughing",
+          "62": "Explain the IMD swarm to your grandma",
+          "63": "React to the IMD swarm live on stream",
+          "64": "Put the IMD swarm on a big screen",
+          "65": "Street poll: what would you do for $15 from an AI?",
+          "66": "Make a meme about the IMD swarm",
+          "67": "Hold a sign: an AI swarm paid me to hold this"
         }
       }
     }
