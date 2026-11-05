@@ -7,12 +7,12 @@
     "mainnet": {
       "name": "Ethereum",
       "chainId": 1,
-      "rpcUrl": "https://ethereum-rpc.publicnode.com",
+      "rpcUrl": "https://rpc.mevblocker.io",
       "rpcUrls": [
+        "https://rpc.mevblocker.io",
         "https://ethereum-rpc.publicnode.com",
-        "https://gateway.tenderly.co/public/mainnet",
         "https://eth.drpc.org",
-        "https://eth.blockrazor.xyz"
+        "https://gateway.tenderly.co/public/mainnet"
       ],
       "apiUrl": "",
       "ipfsGateway": "https://gateway.pinata.cloud/ipfs/",
